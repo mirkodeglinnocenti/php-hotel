@@ -49,28 +49,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
     
-    <main>
-        <?php
-        foreach($hotels as $key => $hotel ) :
-        ?>
-            <p><?php echo $key; ?></p>
+    <main class="p-5">
+        <table class="table table-striped border">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distance to Center</th>
+                </tr>
+            </thead>
+            <tbody>
 
-            <?php
-            foreach($hotel as $describe ) :
-            ?>
-            <p><?php echo $describe; ?></p>
-            <?php
-            endforeach;    
-            ?>
+                <?php
+                foreach($hotels as $key => $hotel ) :
+                    ?>
+                    <tr>
+                        <?php
+                        foreach($hotel as $describe ) :
+                        ?>
+                            <td><?php echo $describe; ?></td>
+                        <?php
+                        endforeach;    
+                        ?>
+                    </tr>
 
+                <?php
+                endforeach;    
+                ?>
 
-        <?php
-        endforeach;    
-        ?>
+            </tbody>
+        </table>
     </main>
+
+    
 
 </body>
 </html>
